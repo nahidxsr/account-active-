@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আইডি একটিভ করুন - Taka Gor BD</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="activation-container">
+        <h2>🔒 আপনার আইডি একটিভ করুন</h2>
+
+        <!-- পেমেন্ট অপশন -->
+        <div class="payment-options">
+            <button class="payment-btn" onclick="showPopup('bkash')">📲 বিকাশ</button>
+            <button class="payment-btn" onclick="showPopup('nagad')">💳 নগদ</button>
+            <button class="payment-btn" onclick="showPopup('crypto')">🪙 Trust Wallet (Crypto)</button>
+        </div>
+
+        <!-- পপআপ -->
+        <div id="paymentPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">✖</span>
+                <h3 id="popupTitle">পেমেন্ট করুন</h3>
+                <p id="popupMessage"></p>
+
+                <!-- Bkash/Nagad ইনপুট -->
+                <div id="mobilePayment" style="display: none;">
+                    <label>📌 আমাদের নাম্বার:</label>
+                    <input type="text" id="ourNumber" value="017XXXXXXXX" readonly>
+                    <button onclick="copyText('ourNumber')">📋 কপি করুন</button>
+
+                    <label>📌 আপনার নাম্বার:</label>
+                    <input type="text" id="userNumber" placeholder="আপনার নাম্বার লিখুন">
+
+                    <label>📝 ট্রানজেকশন আইডি:</label>
+                    <input type="text" id="transactionId" placeholder="ট্রানজেকশন আইডি লিখুন">
+                </div>
+
+                <!-- Trust Wallet ইনপুট -->
+                <div id="cryptoPayment" style="display: none;">
+                    <label>⚡ আপনি কোন নেটওয়ার্ক ব্যবহার করছেন?</label>
+                    <select id="cryptoNetwork">
+                        <option value="BTC">Bitcoin (BTC)</option>
+                        <option value="BNB">Binance Coin (BNB)</option>
+                        <option value="TON">Toncoin (TON)</option>
+                        <option value="TRX">Tron (TRX)</option>
+                        <option value="USDT">Tether (USDT)</option>
+                    </select>
+
+                    <label>📌 আমাদের ওয়ালেট অ্যাড্রেস:</label>
+                    <input type="text" id="ourWallet" value="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" readonly>
+                    <button onclick="copyText('ourWallet')">📋 কপি করুন</button>
+
+                    <label>📌 আপনার ওয়ালেট অ্যাড্রেস:</label>
+                    <input type="text" id="userWallet" placeholder="আপনার ওয়ালেট অ্যাড্রেস লিখুন">
+                </div>
+
+                <button onclick="submitPayment()">✅ সাবমিট করুন</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                  </html>
