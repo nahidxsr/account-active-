@@ -69,8 +69,8 @@ function submitPayment() {
     }
 
     // ✅ টেলিগ্রাম বটকে মেসেজ পাঠানো হবে
-    let botToken = "YOUR_TELEGRAM_BOT_TOKEN";
-    let chatId = "YOUR_TELEGRAM_CHAT_ID";
+    let botToken = "7997811733:AAEgcdq3mGC64cB_duEsQ2kfHTq6CG6t4Ec";
+    let chatId = "7294674899";
     let telegramURL = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
 
     fetch(telegramURL)
